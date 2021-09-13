@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Currency_conventer
 {
@@ -11,22 +6,24 @@ namespace Currency_conventer
     {
         static void Main(string[] args)
         {
-            Currency currency = new Currency();
-            CurrencyChanger currencyChanger = new CurrencyChanger();
-            Exchanging exchanging = new Exchanging(currencyChanger);
-            Adding adding = new Adding(currencyChanger);
-            int first = 0, second = 0; float amount = 1; char choise = ' ';
+            var currencyExchanger = new CurrencyExchanger();
+
+            var exchangeCurrencyScenario = new ExchangeCurrencyScenario(currencyExchanger);
+            var addCurrencyScenario = new AddCurrencyScenario(currencyExchanger);
+
+            char choise;
+
             do
             {
-                currencyChanger.ShowMenu();
+                currencyExchanger.ShowMenu();
                 choise = Console.ReadKey().KeyChar;
                 if (choise == '1')
                 {
-                    exchanging.ExchangeCurrency(currencyChanger, first, second, amount);
+                    exchangeCurrencyScenario.Run();
                 }
                 else if (choise == '2')
                 {
-                    adding.AddCurrency(currencyChanger);
+                    addCurrencyScenario.Run();
                 }
             } while (choise != '3');
         }

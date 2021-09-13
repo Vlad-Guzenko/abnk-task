@@ -44,11 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Currency\Currency.cs" />
-    <Compile Include="CurrencyChanger\CurrencyChanger.cs" />
+    <Compile Include="CurrencyExchanger\CurrencyExchanger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenarios\Adding.cs" />
-    <Compile Include="Scenarios\Exchanging.cs" />
+    <Compile Include="Scenarios\AddCurrencyScenario.cs" />
+    <Compile Include="Scenarios\BaseScenario.cs" />
+    <Compile Include="Scenarios\ExchangeCurrencyScenario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
